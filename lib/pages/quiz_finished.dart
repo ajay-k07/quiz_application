@@ -31,6 +31,7 @@ class QuizFinishedPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.orangeAccent,
         title: Text('Result'),
         elevation: 0,
       ),
@@ -40,9 +41,10 @@ class QuizFinishedPage extends StatelessWidget {
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [
-                  Colors.red,
-                  Colors.black45,
-                  Colors.red
+                  Colors.cyan,
+                  Colors.indigoAccent,
+                  Colors.cyanAccent
+
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter

@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('OpenTrivia'),
+          title: Text('Quiz App'),
           elevation: 0,
         ),
         body: Stack(
@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
               clipper: WaveClipperTwo(),
               child: Container(
                 decoration:
-                BoxDecoration(color: Theme.of(context).primaryColor),
+                BoxDecoration(color: Colors.lightBlueAccent),
                 height: 200,
               ),
             ),
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
-                          fontSize: 16.0),
+                          fontSize: 20.0),
                     ),
                   ),
                 ),
@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                           crossAxisCount: MediaQuery.of(context).size.width >
                               1000
                               ? 7
-                              : MediaQuery.of(context).size.width > 600 ? 5 : 3,
+                              : MediaQuery.of(context).size.width > 600 ? 5 : 2,
                           childAspectRatio: 1.2,
                           crossAxisSpacing: 10.0,
                           mainAxisSpacing: 10.0),
@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      color: Colors.grey.shade800,
+      color: Colors.black,
       textColor: Colors.white70,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,

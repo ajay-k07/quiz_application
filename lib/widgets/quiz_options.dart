@@ -51,6 +51,7 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
               children: <Widget>[
                 SizedBox(width: 0.0),
                 ActionChip(
+
                   label: Text("10"),
                   labelStyle: TextStyle(color: Colors.white),
                   backgroundColor: _noOfQuestions == 10 ? Colors.greenAccent : Colors.grey.shade600,
@@ -98,7 +99,7 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                 ActionChip(
                   label: Text("Any"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _difficulty == null ? Colors.black : Colors.black87,
+                  backgroundColor: _difficulty == null ? Colors.blue : Colors.black87,
                   onPressed: () => _selectDifficulty(null),
                 ),
                 ActionChip(
@@ -125,7 +126,7 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
           ),
           SizedBox(height: 20.0),
           processing ? CircularProgressIndicator(backgroundColor: Colors.grey) : RaisedButton(
-            child: Text("Start Quiz"),
+            child: Text("Lets Rock"),
             onPressed: _startQuiz,
           ),
           SizedBox(height: 20.0),

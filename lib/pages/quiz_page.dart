@@ -54,11 +54,12 @@ class _QuizPageState extends State<QuizPage> {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
+
                 children: <Widget>[
                   Row(
                     children: <Widget>[
                       CircleAvatar(
-                        backgroundColor: Colors.white70,
+                        backgroundColor: Colors.deepPurple,
                         child: Text("${_currentIndex + 1}"),
                       ),
                       SizedBox(width: 16.0),
@@ -74,8 +75,9 @@ class _QuizPageState extends State<QuizPage> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 200.0),
                   Card(
+                    color: Colors.lightBlue,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
@@ -83,7 +85,7 @@ class _QuizPageState extends State<QuizPage> {
 
                           title: Text(HtmlUnescape().convert("$option"),style: MediaQuery.of(context).size.width > 800
                               ? TextStyle(
-                              fontSize: 30.0
+                              fontSize: 40.0
                           ) : null,),
                           groupValue: _answers[_currentIndex],
                           value: option,
@@ -123,6 +125,8 @@ class _QuizPageState extends State<QuizPage> {
   void _nextSubmit() {
     if (_answers[_currentIndex] == null) {
       _key.currentState.showSnackBar(SnackBar(
+        elevation: 10,
+        backgroundColor: Colors.red,
         content: Text("You must select an answer to continue."),
       ));
       return;
@@ -143,17 +147,20 @@ class _QuizPageState extends State<QuizPage> {
         context: context,
         builder: (_) {
           return AlertDialog(
+            backgroundColor: Colors.red,
             content: Text(
                 "Are you sure you want to quit the quiz? All your progress will be lost."),
-            title: Text("Warning!"),
+            title: Text("Warning!",textAlign: TextAlign.center),
             actions: <Widget>[
               FlatButton(
+                color: Colors.white,
                 child: Text("Yes"),
                 onPressed: () {
                   Navigator.pop(context, true);
                 },
               ),
               FlatButton(
+                color: Colors.white,
                 child: Text("No"),
                 onPressed: () {
                   Navigator.pop(context, false);

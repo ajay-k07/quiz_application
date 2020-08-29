@@ -13,6 +13,7 @@ class CheckAnswersPage extends StatelessWidget {
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.teal,
         title: Text('Check Answers'),
         elevation: 0,
       ),
@@ -22,7 +23,7 @@ class CheckAnswersPage extends StatelessWidget {
             clipper: WaveClipperTwo(),
             child: Container(
               decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor
+                  color: Colors.cyan
               ),
               height: 200,
             ),
@@ -49,6 +50,7 @@ class CheckAnswersPage extends StatelessWidget {
     Question question = questions[index];
     bool correct = question.correctAnswer == answers[index];
     return Card(
+      color: Colors.brown,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
