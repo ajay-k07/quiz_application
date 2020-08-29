@@ -36,48 +36,48 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16.0),
-            color: Colors.grey.shade200,
+            color: Colors.yellow, // category color after selection
             child: Text(widget.category.name, style: Theme.of(context).textTheme.title.copyWith(),),
           ),
-          SizedBox(height: 10.0),
+          SizedBox(height: 13.0),
           Text("Select Total Number of Questions"),
           SizedBox(
             width: double.infinity,
             child: Wrap(
               alignment: WrapAlignment.center,
               runAlignment: WrapAlignment.center,
-              runSpacing: 16.0,
-              spacing: 16.0,
+              runSpacing: 20.0,
+              spacing: 25.0,
               children: <Widget>[
                 SizedBox(width: 0.0),
                 ActionChip(
                   label: Text("10"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _noOfQuestions == 10 ? Colors.indigo : Colors.grey.shade600,
+                  backgroundColor: _noOfQuestions == 10 ? Colors.greenAccent : Colors.grey.shade600,
                   onPressed: () => _selectNumberOfQuestions(10),
                 ),
                 ActionChip(
                   label: Text("20"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _noOfQuestions == 20 ? Colors.indigo : Colors.grey.shade600,
+                  backgroundColor: _noOfQuestions == 20 ? Colors.green : Colors.grey.shade600,
                   onPressed: () => _selectNumberOfQuestions(20),
                 ),
                 ActionChip(
                   label: Text("30"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _noOfQuestions == 30 ? Colors.indigo : Colors.grey.shade600,
+                  backgroundColor: _noOfQuestions == 30 ? Colors.orangeAccent : Colors.grey.shade600,
                   onPressed: () => _selectNumberOfQuestions(30),
                 ),
                 ActionChip(
                   label: Text("40"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _noOfQuestions == 40 ? Colors.indigo : Colors.grey.shade600,
+                  backgroundColor: _noOfQuestions == 40 ? Colors.deepOrange : Colors.grey.shade600,
                   onPressed: () => _selectNumberOfQuestions(40),
                 ),
                 ActionChip(
                   label: Text("50"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _noOfQuestions == 50 ? Colors.indigo : Colors.grey.shade600,
+                  backgroundColor: _noOfQuestions == 50 ? Colors.red : Colors.grey.shade600,
                   onPressed: () => _selectNumberOfQuestions(50),
                 ),
 
@@ -98,25 +98,25 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
                 ActionChip(
                   label: Text("Any"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _difficulty == null ? Colors.indigo : Colors.grey.shade600,
+                  backgroundColor: _difficulty == null ? Colors.black : Colors.black87,
                   onPressed: () => _selectDifficulty(null),
                 ),
                 ActionChip(
                   label: Text("Easy"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _difficulty == "easy" ? Colors.green : Colors.grey.shade600,
+                  backgroundColor: _difficulty == "easy" ? Colors.green : Colors.black87,
                   onPressed: () => _selectDifficulty("easy"),
                 ),
                 ActionChip(
                   label: Text("Medium"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _difficulty == "medium" ? Colors.deepOrange : Colors.grey.shade600,
+                  backgroundColor: _difficulty == "medium" ? Colors.deepOrange : Colors.black87,
                   onPressed: () => _selectDifficulty("medium"),
                 ),
                 ActionChip(
                   label: Text("Hard"),
                   labelStyle: TextStyle(color: Colors.white),
-                  backgroundColor: _difficulty == "hard" ? Colors.red : Colors.grey.shade600,    //colors of the option changed
+                  backgroundColor: _difficulty == "hard" ? Colors.red : Colors.black87,    //colors of the option changed
                   onPressed: () => _selectDifficulty("hard"),
                 ),
 
@@ -124,7 +124,7 @@ class _QuizOptionsDialogState extends State<QuizOptionsDialog> {
             ),
           ),
           SizedBox(height: 20.0),
-          processing ? CircularProgressIndicator() : RaisedButton(
+          processing ? CircularProgressIndicator(backgroundColor: Colors.grey) : RaisedButton(
             child: Text("Start Quiz"),
             onPressed: _startQuiz,
           ),
