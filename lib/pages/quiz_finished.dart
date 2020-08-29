@@ -19,7 +19,7 @@ class QuizFinishedPage extends StatelessWidget {
         correct++;
     });
     final TextStyle titleStyle = TextStyle(
-        color: Colors.black87,
+        color: Colors.white,
         fontSize: 16.0,
         fontWeight: FontWeight.w500
     );
@@ -40,8 +40,9 @@ class QuizFinishedPage extends StatelessWidget {
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [
-                  Theme.of(context).primaryColor,
-                  Theme.of(context).accentColor
+                  Colors.red,
+                  Colors.black45,
+                  Colors.red
                 ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter
@@ -52,10 +53,12 @@ class QuizFinishedPage extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Card(
+                color: Color.fromRGBO(48, 48, 47, 0.4),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)
                 ),
                 child: ListTile(
+
                   contentPadding: const EdgeInsets.all(16.0),
                   title: Text("Total Questions", style: titleStyle),
                   trailing: Text("${questions.length}", style: trailingStyle),
@@ -63,6 +66,7 @@ class QuizFinishedPage extends StatelessWidget {
               ),
               SizedBox(height: 10.0),
               Card(
+                color: Color.fromRGBO(198, 207, 76, 1),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)
                 ),
@@ -74,6 +78,7 @@ class QuizFinishedPage extends StatelessWidget {
               ),
               SizedBox(height: 10.0),
               Card(
+                color: Color.fromRGBO(57, 184, 110, 1),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)
                 ),
@@ -85,6 +90,7 @@ class QuizFinishedPage extends StatelessWidget {
               ),
               SizedBox(height: 10.0),
               Card(
+                color: Color.fromRGBO(186, 17, 17, 1),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)
                 ),
@@ -103,7 +109,7 @@ class QuizFinishedPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    color: Theme.of(context).accentColor.withOpacity(0.8),
+                    color: Colors.black45,
                     child: Text("Goto Home"),
                     onPressed: () => Navigator.pop(context),
                   ),
@@ -112,7 +118,7 @@ class QuizFinishedPage extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    color: Theme.of(context).primaryColor,
+                    color: Colors.teal,
                     child: Text("Check Answers"),
                     onPressed: (){
                       Navigator.of(context).push(MaterialPageRoute(
